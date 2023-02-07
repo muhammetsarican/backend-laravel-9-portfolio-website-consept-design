@@ -126,13 +126,14 @@
             </div>
             <div class="slider-place">
                 <div class="items">
+                    @foreach($comments as $comment)
                     <div class="item">
                         <div class="c-profile-photo">
                             <i>
                                 <img src="{{asset("assets")}}/images/bionluk-2.png" alt="">
                             </i>
                             <div class="c-name">
-                                <p>bionluk</p>
+                                <p>{{$comment->customer_name}}</p>
                             </div>
                         </div>
                         <div class="c-rate-comment">
@@ -143,13 +144,14 @@
                                         style="width:50px;height:50px">
                                     </lord-icon>
                                 </i>
-                                <p>0.0</p>
+                                <p>{{$comment->given_rate}}</p>
                             </div>
                             <div class="c-comment">
-                                <p>Freelancer siparişi tamamlayamadı. (Bu bir otomatik sistem yorumudur.)</p>
+                                <p>{{$comment->comment}}</p>
                             </div>
                         </div>
                     </div>
+                    @endforeach
                     <div class="item">
                         <div class="c-profile-photo">
                             <i>

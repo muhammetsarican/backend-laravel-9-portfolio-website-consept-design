@@ -5,10 +5,10 @@
                 <h1 class="heading-small"><a href="#home"><span class="heading-large">M</span>uhammet <span
                             class="heading-large">S</span>arıcan</a></h1>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="pages/education.html">Education</a></li>
-                    <li><a href="pages/certificate.html">Certificates</a></li>
-                    <li><a href="pages/work.html">Works</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="{{route('education')}}">Education</a></li>
+                    <li><a href="{{route('certificate')}}">Certificates</a></li>
+                    <li><a href="{{route('work')}}">Works</a></li>
                     <li class="login-avatar" id="avatar">
                         <a href="">
                             <span>

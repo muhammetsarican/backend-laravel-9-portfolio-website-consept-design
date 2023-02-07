@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
+namespace App\Http\Controllers\Frontend\Contact;
 
 use App\Http\Controllers\Controller;
-use App\Models\Backend\CustomerMessage;
+use App\Models\Frontend\Contact;
 use Illuminate\Http\Request;
 
-class CustomerMessageController extends Controller
+class ContactController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,6 +16,7 @@ class CustomerMessageController extends Controller
     public function index()
     {
         //
+        return view('layouts.frontend.content.contact');
     }
 
     /**
@@ -42,10 +43,10 @@ class CustomerMessageController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Backend\CustomerMessage  $customerMessage
+     * @param  \App\Models\Frontend\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function show(CustomerMessage $customerMessage)
+    public function show(Contact $contact)
     {
         //
     }
@@ -53,10 +54,10 @@ class CustomerMessageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Backend\CustomerMessage  $customerMessage
+     * @param  \App\Models\Frontend\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function edit(CustomerMessage $customerMessage)
+    public function edit(Contact $contact)
     {
         //
     }
@@ -65,10 +66,10 @@ class CustomerMessageController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Backend\CustomerMessage  $customerMessage
+     * @param  \App\Models\Frontend\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, CustomerMessage $customerMessage)
+    public function update(Request $request, Contact $contact)
     {
         //
     }
@@ -76,10 +77,10 @@ class CustomerMessageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Backend\CustomerMessage  $customerMessage
+     * @param  \App\Models\Frontend\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CustomerMessage $customerMessage)
+    public function destroy(Contact $contact)
     {
         //
     }

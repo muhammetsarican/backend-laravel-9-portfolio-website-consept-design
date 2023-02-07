@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Backend\Comment;
 use App\Models\Frontend\Home;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,8 @@ class HomeController extends Controller
     public function index()
     {
         //
-        return view('layouts.frontend.content.index');
+        $comments=Comment::get();
+        return view('layouts.frontend.content.index',compact('comments'));
     }
 
     /**

@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
+namespace App\Http\Controllers\Frontend\Certificate;
 
 use App\Http\Controllers\Controller;
-use App\Models\Backend\AuthorizedMessage;
+use App\Models\Frontend\Certificate;
 use Illuminate\Http\Request;
 
-class AuthorizedMessageController extends Controller
+class CertificateController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,6 +16,8 @@ class AuthorizedMessageController extends Controller
     public function index()
     {
         //
+        $certificates=Certificate::get();
+        return view('layouts.frontend.content.certificate',compact('certificates'));
     }
 
     /**
@@ -42,10 +44,10 @@ class AuthorizedMessageController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Backend\AuthorizedMessage  $authorizedMessage
+     * @param  \App\Models\Frontend\Certificate  $certificate
      * @return \Illuminate\Http\Response
      */
-    public function show(AuthorizedMessage $authorizedMessage)
+    public function show(Certificate $certificate)
     {
         //
     }
@@ -53,10 +55,10 @@ class AuthorizedMessageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Backend\AuthorizedMessage  $authorizedMessage
+     * @param  \App\Models\Frontend\Certificate  $certificate
      * @return \Illuminate\Http\Response
      */
-    public function edit(AuthorizedMessage $authorizedMessage)
+    public function edit(Certificate $certificate)
     {
         //
     }
@@ -65,10 +67,10 @@ class AuthorizedMessageController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Backend\AuthorizedMessage  $authorizedMessage
+     * @param  \App\Models\Frontend\Certificate  $certificate
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, AuthorizedMessage $authorizedMessage)
+    public function update(Request $request, Certificate $certificate)
     {
         //
     }
@@ -76,10 +78,10 @@ class AuthorizedMessageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Backend\AuthorizedMessage  $authorizedMessage
+     * @param  \App\Models\Frontend\Certificate  $certificate
      * @return \Illuminate\Http\Response
      */
-    public function destroy(AuthorizedMessage $authorizedMessage)
+    public function destroy(Certificate $certificate)
     {
         //
     }

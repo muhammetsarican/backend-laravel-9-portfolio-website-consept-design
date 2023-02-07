@@ -1,22 +1,18 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
+namespace App\Http\Controllers\Backend\Contact;
 
 use App\Http\Controllers\Controller;
-use App\Models\Backend\Message;
+use App\Models\Backend\Contact;
 use Illuminate\Http\Request;
-use Symfony\Component\Console\Input\Input;
 
-class MessageController extends Controller
+class ContactController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public static function getMessages($chat_id){
-        return Message::Where('room_id', $chat_id)->get();
-    }
     public function index()
     {
         //
@@ -38,13 +34,17 @@ class MessageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $room_id)
+    public function store(Request $request)
     {
         //
-        $data=new Message;
+        $data=new Contact;
+        $data->name=$request->input('name');
+        $data->surname=$request->input('surname');
+        $data->mail=$request->input('mail');
+        // $data->phone=$request->input('phone');
+        $data->subject=$request->input('subject');
+        $data->description=$request->input('description');
         $data->message=$request->input('message');
-        $data->role_id=3;
-        $data->room_id=$room_id;
         $data->save();
         return back();
     }
@@ -52,10 +52,10 @@ class MessageController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Backend\Message  $message
+     * @param  \App\Models\Backend\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function show(Message $message)
+    public function show(Contact $contact)
     {
         //
     }
@@ -63,10 +63,10 @@ class MessageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Backend\Message  $message
+     * @param  \App\Models\Backend\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function edit(Message $message)
+    public function edit(Contact $contact)
     {
         //
     }
@@ -75,10 +75,10 @@ class MessageController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Backend\Message  $message
+     * @param  \App\Models\Backend\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Message $message)
+    public function update(Request $request, Contact $contact)
     {
         //
     }
@@ -86,10 +86,10 @@ class MessageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Backend\Message  $message
+     * @param  \App\Models\Backend\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Message $message)
+    public function destroy(Contact $contact)
     {
         //
     }

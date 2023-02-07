@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\MessageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 // Backend - Start
-require __DIR__.'/backend/chatRoom/index.php';
+require __DIR__.'/backend/chatroom/index.php';
+require __DIR__.'/backend/message/index.php';
+require __DIR__.'/backend/contact/index.php';
 // Backend - End
+// Frontent - Start
 require __DIR__.'/frontend/home/index.php';
+require __DIR__.'/frontend/contact/index.php';
+require __DIR__.'/frontend/certificate/index.php';
+require __DIR__.'/frontend/education/index.php';
+require __DIR__.'/frontend/work/index.php';
+// Frontent - End
 // Route::get('/', function () {
 //     return view('layouts.frontend.content.index');
 // });

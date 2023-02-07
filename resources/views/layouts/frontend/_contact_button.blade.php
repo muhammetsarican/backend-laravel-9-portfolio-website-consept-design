@@ -1,7 +1,7 @@
     <!-- Contact - Start -->
     <div id="contact-me">
         <div class="mail-me" id="mail">
-            <a href="/pages/contact.html">
+            <a href="{{route('contact')}}">
                 <i>
                     <lord-icon src="https://cdn.lordicon.com/gzmgulpl.json" trigger="hover"
                         style="width:55px;height:55px">
