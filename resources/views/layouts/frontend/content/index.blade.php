@@ -254,7 +254,7 @@
         </section>
         <!-- Comment - End -->
         <!-- Work Together - Start -->
-        <section id="work-together">
+<!--         <section id="work-together">
             <div class="items">
                 <div class="item">
                     <p>Need a Website or Desktop App?</p>
@@ -263,6 +263,6 @@
                     <p>Let's Work Together <span><img src="{{asset("assets")}}/icons/right-arrow.png" alt=""></span></p>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- Work Together - End -->
 @endsection

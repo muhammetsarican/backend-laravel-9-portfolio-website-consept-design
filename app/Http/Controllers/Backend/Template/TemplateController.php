@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Frontend\Work;
+namespace App\Http\Controllers\Backend\Template;
 
 use App\Http\Controllers\Controller;
-use App\Models\Frontend\Work;
-use App\Models\Backend\CategoryWork;
+use App\Models\Backend\Template;
 use Illuminate\Http\Request;
 
-class WorkController extends Controller
+class TemplateController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +16,6 @@ class WorkController extends Controller
     public function index()
     {
         //
-        $work_categories=CategoryWork::get();
-        $works=Work::get();
-        return view('layouts.frontend.content.work',compact('works', 'work_categories'));
     }
 
     /**
@@ -41,15 +37,25 @@ class WorkController extends Controller
     public function store(Request $request)
     {
         //
+        // require('
+        //     mail,
+        //     name
+        // ');
+
+        $template = new Template();
+        $template->name = $request->name;
+        $template->mail = $request->mail;
+        $template->save();
+        return redirect()->back();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Frontend\Work  $work
+     * @param  \App\Models\Backend\Template  $template
      * @return \Illuminate\Http\Response
      */
-    public function show(Work $work)
+    public function show(Template $template)
     {
         //
     }
@@ -57,10 +63,10 @@ class WorkController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Frontend\Work  $work
+     * @param  \App\Models\Backend\Template  $template
      * @return \Illuminate\Http\Response
      */
-    public function edit(Work $work)
+    public function edit(Template $template)
     {
         //
     }
@@ -69,10 +75,10 @@ class WorkController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Frontend\Work  $work
+     * @param  \App\Models\Backend\Template  $template
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Work $work)
+    public function update(Request $request, Template $template)
     {
         //
     }
@@ -80,10 +86,10 @@ class WorkController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Frontend\Work  $work
+     * @param  \App\Models\Backend\Template  $template
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Work $work)
+    public function destroy(Template $template)
     {
         //
     }

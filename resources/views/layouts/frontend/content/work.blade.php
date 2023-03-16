@@ -41,7 +41,14 @@
                                 <i>
                                     <img class="at-work" src="{{ asset('assets') }}/images/bionluk-2.png" alt="">
                                 </i>
-                                <p>Web Design, Laravel, Html, Css</p>
+                                <p>
+                                @foreach($work_categories as $category)
+                                    @if ($category->work_id==$work->id)
+                                        {{$category->category->title}}
+                                    @endif
+                                    ,
+                                @endforeach
+                                </p>
                             </div>
                             <div class="about-work">
                                 <h3>{{$work->title}}</h3>

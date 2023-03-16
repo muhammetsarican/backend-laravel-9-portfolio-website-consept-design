@@ -2,10 +2,10 @@
     <header id="navbar-top">
         <div class="container">
             <nav id="navbar">
-                <h1 class="heading-small"><a href="#home"><span class="heading-large">M</span>uhammet <span
+                <h1 class="heading-small"><a href="{{route('home')}}"><span class="heading-large">M</span>uhammet <span
                             class="heading-large">S</span>arıcan</a></h1>
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="{{route('home')}}">Home</a></li>
                     <li><a href="{{route('education')}}">Education</a></li>
                     <li><a href="{{route('certificate')}}">Certificates</a></li>
                     <li><a href="{{route('work')}}">Works</a></li>

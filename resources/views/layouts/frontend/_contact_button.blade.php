@@ -11,7 +11,7 @@
         </div>
         <!-- Contact - End -->
         <!-- Chat - Start -->
-        <div class="chat-me" id="chat">
+{{--         <div class="chat-me" id="chat">
             <i>
                 <lord-icon src="https://cdn.lordicon.com/kjkiqtxg.json" trigger="loop" delay="2000"
                     colors="outline:#121331,primary:#646e78,secondary:#336ea2,tertiary:#062e51"
@@ -19,6 +19,6 @@
                 </lord-icon>
             </i>
             </a>
-        </div>
+        </div> --}}
     </div>
     <!-- Chat - End -->

@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 require __DIR__.'/backend/chatroom/index.php';
 require __DIR__.'/backend/message/index.php';
 require __DIR__.'/backend/contact/index.php';
+require __DIR__.'/backend/template/index.php';
 // Backend - End
 // Frontent - Start
 require __DIR__.'/frontend/home/index.php';

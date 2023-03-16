@@ -12,9 +12,12 @@
                 </p>
             </div>
             <div class="form">
-                <input type="text" name="" id="" placeholder="First Name">
-                <input type="email" name="" id="" placeholder="Mail">
-                <input type="submit" value="Download" class="download-button">
+                <form action="{{route('template_store')}}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <input type="text" name="name" id="" placeholder="First Name">
+                    <input type="email" name="mail" id="" placeholder="Mail">
+                    <input type="submit" value="Download" class="download-button">
+                </form>
             </div>
         </div>
     </section>
