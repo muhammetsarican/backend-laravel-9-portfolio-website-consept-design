@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Backend\Work;
 
 use App\Http\Controllers\Controller;
+use App\Models\Backend\Platform;
 use App\Models\Backend\Work;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class WorkController extends Controller
 {
@@ -26,6 +28,8 @@ class WorkController extends Controller
     public function create()
     {
         //
+        $platforms=Platform::get();
+        return view("layouts.backend.work.add",compact("platforms"));
     }
 
     /**
@@ -37,6 +41,17 @@ class WorkController extends Controller
     public function store(Request $request)
     {
         //
+        // print_r($request);
+        // exit();
+        $work=new Work;
+        $work->title=$request->input("title");
+        $work->description=$request->input("description");
+        $work->keywords=$request->input("keywords");
+        $work->image=Storage::putFile("Work Images", $request->file("image"));
+        $work->platform_id=$request->input("platform_id");
+        $work->construction_date=$request->date("construction_date");
+        $work->save();
+        return redirect()->back();
     }
 
     /**

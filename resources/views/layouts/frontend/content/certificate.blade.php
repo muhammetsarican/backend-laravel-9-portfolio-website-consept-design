@@ -1,3 +1,14 @@
+<?php
+    function DateAsStr($date){
+    $monthList=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    $year=substr($date, 0, strpos($date, "-"));
+    $monthNumber=substr($date, strlen($year)+1, strpos($date, "-", strlen($year)+1)-strlen($year)-1);
+    $month=$monthList[(int)$monthNumber-1];
+
+    $day=substr($date, strpos($date, "-", strpos($date, $monthNumber))+1);
+    return $month." ".$year;
+    }
+?>
 @extends('layouts.home')
 @section('content')
     <!-- Certificate - Start -->
@@ -29,17 +40,17 @@
                         <li class="heading-xsmall">
                             <div class="certificate-block">
                                 <div class="certificate-img">
-                                    <i><img src="{{ asset('assets') }}/images/nba-store.png" alt="">
+                                    <i><img src="{{  Illuminate\Support\Facades\Storage::url($certificate->image) }}" alt="">
                                     </i>
                                 </div>
                                 <div class="about-certificate">
                                     <a href="">{{$certificate->title}}</a>
-                                    <p class="heading-xxsmall">{{$certificate->receipt_date}}</p>
+                                    <p class="heading-xxsmall">{{DateAsStr($certificate->receipt_date)}}</p>
                                 </div>
                             </div>
                         </li>
                     @endforeach
-                    <li class="heading-xsmall">
+                    {{-- <li class="heading-xsmall">
                         <div class="certificate-block">
                             <div class="certificate-img">
                                 <i><img src="{{ asset('assets') }}/images/nba-store.png" alt=""></i>
@@ -104,7 +115,7 @@
                                 <p class="heading-xxsmall">15 August 2021</p>
                             </div>
                         </div>
-                    </li>
+                    </li> --}}
                 </ol>
             </div>
         </div>

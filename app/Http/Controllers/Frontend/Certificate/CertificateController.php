@@ -16,7 +16,7 @@ class CertificateController extends Controller
     public function index()
     {
         //
-        $certificates=Certificate::get();
+        $certificates=Certificate::where("status", true)->get();
         return view('layouts.frontend.content.certificate',compact('certificates'));
     }
 

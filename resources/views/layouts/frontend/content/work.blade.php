@@ -37,7 +37,7 @@
                     <a href="">
                         <article class="item">
                             <div class="work-img-box">
-                                <img class="work-img" src="{{ asset('assets') }}/images/nba-store.png" alt="">
+                                <img class="work-img" src="{{ Illuminate\Support\Facades\Storage::url($work->image)}}" alt="">
                                 <i>
                                     <img class="at-work" src="{{ asset('assets') }}/images/bionluk-2.png" alt="">
                                 </i>

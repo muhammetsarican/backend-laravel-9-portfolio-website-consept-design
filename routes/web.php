@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Backend\Certificate\CertificateController;
 use App\Http\Controllers\Backend\MessageController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +20,8 @@ require __DIR__.'/backend/chatroom/index.php';
 require __DIR__.'/backend/message/index.php';
 require __DIR__.'/backend/contact/index.php';
 require __DIR__.'/backend/template/index.php';
+require __DIR__.'/backend/certificate/index.php';
+require __DIR__.'/backend/work/index.php';
 // Backend - End
 // Frontent - Start
 require __DIR__.'/frontend/home/index.php';
@@ -27,7 +31,7 @@ require __DIR__.'/frontend/education/index.php';
 require __DIR__.'/frontend/work/index.php';
 // Frontent - End
 // Route::get('/', function () {
-//     return view('layouts.frontend.content.index');
+//     return view('welcome');
 // });
 
 // Route::middleware([
