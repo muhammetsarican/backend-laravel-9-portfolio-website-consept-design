@@ -130,7 +130,7 @@
                     <div class="item">
                         <div class="c-profile-photo">
                             <i>
-                                <img src="{{asset("assets")}}/images/bionluk-2.png" alt="">
+                                <img src="{{  Illuminate\Support\Facades\Storage::url($comment->customer_photo)}}" alt="">
                             </i>
                             <div class="c-name">
                                 <p>{{$comment->customer_name}}</p>
@@ -152,103 +152,6 @@
                         </div>
                     </div>
                     @endforeach
-                    <div class="item">
-                        <div class="c-profile-photo">
-                            <i>
-                                <img src="{{asset("assets")}}/images/berkaycanpolat.jpg" alt="">
-                            </i>
-                            <div class="c-name">
-                                <p>berkaycanbolat</p>
-                            </div>
-                        </div>
-                        <div class="c-rate-comment">
-                            <div class="c-given-rate">
-                                <i>
-                                    <lord-icon src="{{asset("assets")}}/https://cdn.lordicon.com/snnvmbic.json" trigger="loop" delay="3500"
-                                        colors="outline:#121331,primary:#ffc738,secondary:#ebe6ef" stroke="25"
-                                        style="width:50px;height:50px">
-                                    </lord-icon>
-                                </i>
-                                <p>5.0</p>
-                            </div>
-                            <div class="c-comment">
-                                <p>Hızlı sorun çözme odaklı güvenilir arkadaş</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="c-profile-photo">
-                            <i>
-                                <img src="{{asset("assets")}}/images/ahmetkozay.heic" alt="">
-                            </i>
-                            <div class="c-name">
-                                <p>ahmetkozay</p>
-                            </div>
-                        </div>
-                        <div class="c-rate-comment">
-                            <div class="c-given-rate">
-                                <i>
-                                    <lord-icon src="{{asset("assets")}}/https://cdn.lordicon.com/snnvmbic.json" trigger="loop" delay="3500"
-                                        colors="outline:#121331,primary:#ffc738,secondary:#ebe6ef" stroke="25"
-                                        style="width:50px;height:50px">
-                                    </lord-icon>
-                                </i>
-                                <p>5.0</p>
-                            </div>
-                            <div class="c-comment">
-                                <p>Elinden gelenin fazlasını yapmaya çalışan işini çok iyi yapan bi beyfendi. Farklı
-                                    projelerde tekrar çakışmak dileğiyle</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="c-profile-photo">
-                            <i>
-                                <img src="{{asset("assets")}}/images/no-avatar.png" alt="">
-                            </i>
-                            <div class="c-name">
-                                <p>sezginsaliev</p>
-                            </div>
-                        </div>
-                        <div class="c-rate-comment">
-                            <div class="c-given-rate">
-                                <i>
-                                    <lord-icon src="{{asset("assets")}}/https://cdn.lordicon.com/snnvmbic.json" trigger="loop" delay="3500"
-                                        colors="outline:#121331,primary:#ffc738,secondary:#ebe6ef" stroke="25"
-                                        style="width:50px;height:50px">
-                                    </lord-icon>
-                                </i>
-                                <p>5.0</p>
-                            </div>
-                            <div class="c-comment">
-                                <p>Eline sağlık hocam mükemmel bir iş çıkarttınız tesekurler</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="c-profile-photo">
-                            <i>
-                                <img src="{{asset("assets")}}/images/halilc418.png" alt="">
-                            </i>
-                            <div class="c-name">
-                                <p>halilc418</p>
-                            </div>
-                        </div>
-                        <div class="c-rate-comment">
-                            <div class="c-given-rate">
-                                <i>
-                                    <lord-icon src="{{asset("assets")}}/https://cdn.lordicon.com/snnvmbic.json" trigger="loop" delay="3500"
-                                        colors="outline:#121331,primary:#ffc738,secondary:#ebe6ef" stroke="25"
-                                        style="width:50px;height:50px">
-                                    </lord-icon>
-                                </i>
-                                <p>5.0</p>
-                            </div>
-                            <div class="c-comment">
-                                <p>Gayet hızlı, tecrübeli ve istediğim tarzda hizmet sağladı. Teşekkürler.</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>

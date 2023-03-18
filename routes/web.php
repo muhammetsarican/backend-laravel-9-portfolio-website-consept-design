@@ -22,6 +22,7 @@ require __DIR__.'/backend/contact/index.php';
 require __DIR__.'/backend/template/index.php';
 require __DIR__.'/backend/certificate/index.php';
 require __DIR__.'/backend/work/index.php';
+require __DIR__.'/backend/comment/index.php';
 // Backend - End
 // Frontent - Start
 require __DIR__.'/frontend/home/index.php';

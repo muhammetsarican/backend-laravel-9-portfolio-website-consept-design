@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend\Comment;
 use App\Http\Controllers\Controller;
 use App\Models\Backend\Comment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class CommentController extends Controller
 {
@@ -26,6 +27,7 @@ class CommentController extends Controller
     public function create()
     {
         //
+        return view("layouts.backend.comment.add");
     }
 
     /**
@@ -37,6 +39,14 @@ class CommentController extends Controller
     public function store(Request $request)
     {
         //
+        $comment=new Comment;
+        $comment->customer_name=$request->input("customer_name");
+        $comment->given_rate=$request->input("given_rate");
+        $comment->comment_date=$request->date("comment_date");
+        $comment->customer_photo=Storage::putFile("Comment Customer Photos", $request->file("customer_photo"));
+        $comment->comment=$request->input("comment");
+        $comment->save();
+        return redirect()->back()->with("success", "Comment added succesfully.");
     }
 
     /**

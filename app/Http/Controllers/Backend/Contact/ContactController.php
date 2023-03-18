@@ -46,7 +46,7 @@ class ContactController extends Controller
         $data->description=$request->input('description');
         $data->message=$request->input('message');
         $data->save();
-        return back();
+        return redirect()->back()->with("success", "Your message sent, thanks for your feedback...");
     }
 
     /**

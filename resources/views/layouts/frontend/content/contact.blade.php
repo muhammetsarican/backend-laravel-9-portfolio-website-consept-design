@@ -19,6 +19,7 @@
                 <div class="contact-form-info">
                     <p class="text-center">Let's Get in Touch</p>
                 </div>
+                @include("layouts.message")
                 <div class="items">
                     <div class="item">
                         <form action="{{route('contact_store')}}" method="post" enctype="multipart/form-data">
