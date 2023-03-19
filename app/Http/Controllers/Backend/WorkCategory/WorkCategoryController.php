@@ -1,12 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Backend\CategoryWork;
+namespace App\Http\Controllers\Backend\WorkCategory;
 
 use App\Http\Controllers\Controller;
-use App\Models\Backend\CategoryWork;
+use App\Models\Backend\Category;
+use App\Models\Backend\Work;
+use App\Models\Backend\WorkCategory;
 use Illuminate\Http\Request;
 
-class CategoryWorkController extends Controller
+class WorkCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -26,6 +28,9 @@ class CategoryWorkController extends Controller
     public function create()
     {
         //
+        $works=Work::get();
+        $categories=Category::get();
+        return view("layouts.backend.workcategory.add", compact("works", "categories"));
     }
 
     /**
@@ -37,15 +42,20 @@ class CategoryWorkController extends Controller
     public function store(Request $request)
     {
         //
+        $workCategory=new WorkCategory;
+        $workCategory->work_id=$request->input("work_id");
+        $workCategory->category_id=$request->input("category_id");
+        $workCategory->save();
+        return redirect()->back()->with("success", "Work category added successfully.");
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Backend\CategoryWork  $categoryWork
+     * @param  \App\Models\Backend\WorkCategory  $workCategory
      * @return \Illuminate\Http\Response
      */
-    public function show(CategoryWork $categoryWork)
+    public function show(WorkCategory $workCategory)
     {
         //
     }
@@ -53,10 +63,10 @@ class CategoryWorkController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Backend\CategoryWork  $categoryWork
+     * @param  \App\Models\Backend\WorkCategory  $workCategory
      * @return \Illuminate\Http\Response
      */
-    public function edit(CategoryWork $categoryWork)
+    public function edit(WorkCategory $workCategory)
     {
         //
     }
@@ -65,10 +75,10 @@ class CategoryWorkController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Backend\CategoryWork  $categoryWork
+     * @param  \App\Models\Backend\WorkCategory  $workCategory
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, CategoryWork $categoryWork)
+    public function update(Request $request, WorkCategory $workCategory)
     {
         //
     }
@@ -76,10 +86,10 @@ class CategoryWorkController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Backend\CategoryWork  $categoryWork
+     * @param  \App\Models\Backend\WorkCategory  $workCategory
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CategoryWork $categoryWork)
+    public function destroy(WorkCategory $workCategory)
     {
         //
     }

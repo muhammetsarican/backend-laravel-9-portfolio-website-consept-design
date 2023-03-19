@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Frontend\Work;
 
 use App\Http\Controllers\Controller;
 use App\Models\Frontend\Work;
-use App\Models\Backend\CategoryWork;
+use App\Models\Frontend\WorkCategory;
 use Illuminate\Http\Request;
 
 class WorkController extends Controller
@@ -17,7 +17,7 @@ class WorkController extends Controller
     public function index()
     {
         //
-        $work_categories=CategoryWork::get();
+        $work_categories=WorkCategory::get();
         $works=Work::get();
         return view('layouts.frontend.content.work',compact('works', 'work_categories'));
     }

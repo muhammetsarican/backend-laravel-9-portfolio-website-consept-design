@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend\Work;
 
 use App\Http\Controllers\Controller;
 use App\Models\Backend\Platform;
+use App\Models\Backend\PlatformCategory;
 use App\Models\Backend\Work;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -28,7 +29,8 @@ class WorkController extends Controller
     public function create()
     {
         //
-        $platforms=Platform::get();
+        $platformCategory=PlatformCategory::where("title", "Freelance")->first();
+        $platforms=Platform::where("category_id", $platformCategory->id)->get();
         return view("layouts.backend.work.add",compact("platforms"));
     }
 
@@ -51,7 +53,7 @@ class WorkController extends Controller
         $work->platform_id=$request->input("platform_id");
         $work->construction_date=$request->date("construction_date");
         $work->save();
-        return redirect()->back();
+        return redirect()->back()->with("success", "Work added succesfully.");
     }
 
     /**

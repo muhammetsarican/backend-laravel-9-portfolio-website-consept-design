@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Backend\Certificate;
+namespace App\Http\Controllers\Backend\Platform;
 
 use App\Http\Controllers\Controller;
-use App\Models\Backend\Certificate;
-use DateTime;
+use App\Models\Backend\Platform;
+use App\Models\Backend\PlatformCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class CertificateController extends Controller
+class PlatformController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -28,7 +28,8 @@ class CertificateController extends Controller
     public function create()
     {
         //
-        return view("layouts.backend.certificate.add");
+        $platformCategory=PlatformCategory::where("status", true)->get();
+        return view("layouts.backend.platform.add", compact("platformCategory"));
     }
 
     /**
@@ -40,25 +41,23 @@ class CertificateController extends Controller
     public function store(Request $request)
     {
         //
-        $certificate=new Certificate;
-        $certificate->title=$request->input('title');
-        $certificate->company_name=$request->input("company_name");
-        $certificate->description=$request->input("description");
-        $certificate->keywords=$request->input("keywords");
-        $certificate->image=Storage::putFile('Certificate Images',$request->file('image'));
-        $certificate->receipt_date=$request->date("receipt_date");
-        $certificate->save();
-        return redirect()->back()->with("success", "Certificate added succesfully.");
-        
+        $platform=new Platform;
+        $platform->name=$request->input("name");
+        $platform->category_id=$request->input("category_id");
+        $platform->description=$request->input("description");
+        $platform->keywords=$request->input("keywords");
+        $platform->image=Storage::putFile("Platform Images", $request->file("image"));
+        $platform->save();
+        return redirect()->back()->with("success", "Platform added successfully.");
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Backend\Certificate  $certificate
+     * @param  \App\Models\Backend\Platform  $platform
      * @return \Illuminate\Http\Response
      */
-    public function show(Certificate $certificate)
+    public function show(Platform $platform)
     {
         //
     }
@@ -66,10 +65,10 @@ class CertificateController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Backend\Certificate  $certificate
+     * @param  \App\Models\Backend\Platform  $platform
      * @return \Illuminate\Http\Response
      */
-    public function edit(Certificate $certificate)
+    public function edit(Platform $platform)
     {
         //
     }
@@ -78,10 +77,10 @@ class CertificateController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Backend\Certificate  $certificate
+     * @param  \App\Models\Backend\Platform  $platform
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Certificate $certificate)
+    public function update(Request $request, Platform $platform)
     {
         //
     }
@@ -89,10 +88,10 @@ class CertificateController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Backend\Certificate  $certificate
+     * @param  \App\Models\Backend\Platform  $platform
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Certificate $certificate)
+    public function destroy(Platform $platform)
     {
         //
     }

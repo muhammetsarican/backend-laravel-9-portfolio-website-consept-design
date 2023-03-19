@@ -39,7 +39,7 @@
                             <div class="work-img-box">
                                 <img class="work-img" src="{{ Illuminate\Support\Facades\Storage::url($work->image)}}" alt="">
                                 <i>
-                                    <img class="at-work" src="{{ asset('assets') }}/images/bionluk-2.png" alt="">
+                                    <img class="at-work" src="{{ Illuminate\Support\Facades\Storage::url($work->platform->image)}}" alt="">
                                 </i>
                                 <p>
                                 @foreach($work_categories as $category)

@@ -23,6 +23,9 @@ require __DIR__.'/backend/template/index.php';
 require __DIR__.'/backend/certificate/index.php';
 require __DIR__.'/backend/work/index.php';
 require __DIR__.'/backend/comment/index.php';
+require __DIR__.'/backend/platform/index.php';
+require __DIR__.'/backend/workcategory/index.php';
+require __DIR__.'/backend/category/index.php';
 // Backend - End
 // Frontent - Start
 require __DIR__.'/frontend/home/index.php';

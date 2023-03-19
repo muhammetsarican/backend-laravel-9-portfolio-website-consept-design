@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('category_works', function (Blueprint $table) {
-            $table->integer("category_id")->unsigned();
-            $table->foreign('category_id')->references('id')->on('categories');
-            $table->integer("work_id")->unsigned();
-            $table->foreign("work_id")->references('id')->on("works");
+        Schema::create('platform_categories', function (Blueprint $table) {
+            $table->increments("id");
+            $table->string("title");
+            $table->string("description")->nullable();
+            $table->boolean("status")->default(false);
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('category_works');
+        Schema::dropIfExists('platform_categories');
     }
 };

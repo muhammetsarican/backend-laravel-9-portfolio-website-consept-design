@@ -26,6 +26,8 @@ class CategoryController extends Controller
     public function create()
     {
         //
+        $categories=Category::get();
+        return view("layouts.backend.category.add", compact("categories"));
     }
 
     /**
@@ -37,6 +39,12 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
+        $category=new Category;
+        $category->parent_id=$request->input("parent_id");
+        $category->title=$request->input("title");
+        $category->description=$request->input("description");
+        $category->save();
+        return redirect()->back()->with("success", "Category added successfully.");
     }
 
     /**
