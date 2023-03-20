@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend\Contact;
 
 use App\Http\Controllers\Controller;
+use App\Models\Backend\ContactCategory;
 use App\Models\Frontend\Contact;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,8 @@ class ContactController extends Controller
     public function index()
     {
         //
-        return view('layouts.frontend.content.contact');
+        $contactCategories=ContactCategory::where("status", true)->get();
+        return view('layouts.frontend.content.contact',compact("contactCategories"));
     }
 
     /**
