@@ -44,6 +44,7 @@ class PlatformController extends Controller
         $platform=new Platform;
         $platform->name=$request->input("name");
         $platform->category_id=$request->input("category_id");
+        $platform->URL=$request->input("URL");
         $platform->description=$request->input("description");
         $platform->keywords=$request->input("keywords");
         $platform->image=Storage::putFile("Platform Images", $request->file("image"));

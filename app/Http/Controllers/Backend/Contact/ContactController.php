@@ -37,22 +37,6 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         //
-        $request->validate([
-            "mail"=>"required",
-            "category_id"=>"required",
-            "message"=>"required"
-        ]);
-        $data=new Contact;
-        $data->name=$request->input('name');
-        $data->surname=$request->input('surname');
-        $data->mail=$request->input('mail');
-        // $data->phone=$request->input('phone');
-        $data->category_id=$request->input("category_id");
-        $data->subject=$request->input('subject');
-        // $data->description=$request->input('description');
-        $data->message=$request->input('message');
-        $data->save();
-        return redirect()->back()->with("success", "Your message sent, thanks for your feedback...");
     }
 
     /**

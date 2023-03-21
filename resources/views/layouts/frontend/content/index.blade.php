@@ -20,11 +20,11 @@
                             portfolio links at below.</p>
                         <div class="links">
                             <ul>
-                                <li><a href="https://www.google.com" target="_blank"><button></button></a></li>
-                                <li><a href="https://www.google.com" target="_blank"><button></button></a></li>
-                                <li><a href="https://www.google.com" target="_blank"><button></button></a></li>
-                                <li><a href="https://www.google.com" target="_blank"><button></button></a></li>
-                                <li><a href="https://www.google.com" target="_blank"><button></button></a></li>
+                                @foreach ($platforms as $platform)
+                                    <a href="{{$platform->URL}}" target="_blank">
+                                        <img width="45" height="45" style="border-radius:0.2rem" src="{{ Illuminate\Support\Facades\Storage::url($platform->image)}}" alt="" srcset="">
+                                    </a>
+                                @endforeach
                             </ul>
                         </div>
                     </div>

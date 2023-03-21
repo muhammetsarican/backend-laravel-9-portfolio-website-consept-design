@@ -40,7 +40,7 @@
                         <li class="heading-xsmall">
                             <div class="certificate-block">
                                 <div class="certificate-img">
-                                    <i><img src="{{  Illuminate\Support\Facades\Storage::url($certificate->image) }}" alt="">
+                                    <i><img style="width:75px;height:80px;object-fit:cover" src="{{  Illuminate\Support\Facades\Storage::url($certificate->image) }}" alt="">
                                     </i>
                                 </div>
                                 <div class="about-certificate">

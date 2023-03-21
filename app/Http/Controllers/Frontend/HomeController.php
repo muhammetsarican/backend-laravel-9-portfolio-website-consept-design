@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Backend\Comment;
 use App\Models\Frontend\Home;
+use App\Models\Frontend\Platform;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -17,8 +18,9 @@ class HomeController extends Controller
     public function index()
     {
         //
+        $platforms=Platform::get();
         $comments=Comment::get();
-        return view('layouts.frontend.content.index',compact('comments'));
+        return view('layouts.frontend.content.index',compact('comments', "platforms"));
     }
 
     /**

@@ -13,6 +13,7 @@
         <option value="{{$category->id}}">{{$category->title}}</option>
         @endforeach
     </select>
+    <input type="text" name="URL" id="" placeholder="URL">
     <input type="text" name="description" id="" placeholder="Description">
     <input type="text" name="keywords" id="" placeholder="Keywords">
     <input type="file" name="image" id="">

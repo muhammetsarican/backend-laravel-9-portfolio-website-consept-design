@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend\Contact;
 
 use App\Http\Controllers\Controller;
 use App\Models\Backend\ContactCategory;
+use App\Models\Backend\Ip;
 use App\Models\Frontend\Contact;
 use Illuminate\Http\Request;
 
@@ -40,6 +41,48 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         //
+        $ip=Ip::where("IP", $request->ip())->first();
+        $request->validate([
+            "mail"=>"required",
+            "category_id"=>"required",
+            "message"=>"required"
+        ]);
+        if($ip){
+            if($ip->status==true){
+                $data=new Contact;
+                $data->name=$request->input('name');
+                $data->surname=$request->input('surname');
+                $data->mail=$request->input('mail');
+                // $data->phone=$request->input('phone');
+                $data->category_id=$request->input("category_id");
+                $data->subject=$request->input('subject');
+                // $data->description=$request->input('description');
+                $data->message=$request->input('message');
+                $data->save();
+                return redirect()->back()->with("success", "Your message sent, thanks for your feedback...");
+            }
+            else{
+                return redirect()->back()->with("error", "You banned, You can not send any message");
+            }
+        }else{
+            $newIp=new Ip;
+            $newIp->IP=$_SERVER["REMOTE_ADDR"];
+            $newIp->status=true;
+            $newIp->save();
+
+            $data=new Contact;
+            $data->name=$request->input('name');
+            $data->surname=$request->input('surname');
+            $data->mail=$request->input('mail');
+            // $data->phone=$request->input('phone');
+            $data->category_id=$request->input("category_id");
+            $data->subject=$request->input('subject');
+            // $data->description=$request->input('description');
+            $data->message=$request->input('message');
+            $data->save();
+            return redirect()->back()->with("success", "Your message sent, thanks for your feedback...");
+        }
+
     }
 
     /**
